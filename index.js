@@ -3,7 +3,7 @@ import cors from 'cors';
 import pool from './db.js';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 const corsOptions = {origin: process.env.URL || '*'}
 
 app.use(cors(corsOptions));
@@ -42,8 +42,10 @@ app.post('/leaderboards/:game', async(req, res) =>{
     }
 });
 
-app.listen(PORT, () =>{
-    console.log(`Server is listening on port:${PORT}`);
-})
+// app.listen(PORT, () =>{
+//     console.log(`Server is listening on port:${PORT}`);
+// })
+
+app.listen(process.env.PORT, () =>  console.log(`Server is listening on port:5000`));
 
 
